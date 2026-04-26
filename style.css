@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-padding-top: 70px; 
+}
 body{
     font-family: Arial;
     margin:0;
@@ -9,6 +15,20 @@ a{
 .project-container .card:hover {
     transform: translateY(-8px);
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* add color top of css*/
+:root {
+    --primary: #072360;      
+    --secondary: #38bdf8;   
+    --dark: #000104;         
+    --light: #d1dae3;
+    --accent: #030006;       
+}
+
 /* Splash screen covers full page */
 #splash {
   position: fixed;
@@ -44,7 +64,7 @@ a{
 /* header */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: linear-gradient(135deg, var(--dark), #08206e, var(--accent));
     color: white;
     display: flex;
     align-items: center;
@@ -84,23 +104,23 @@ a{
 }
 
 .btn {
-    background: #38bdf8;
+    background: var(--secondary);
     color: black;
+    box-shadow: 0 0 10px rgba(56,189,248,0.5);
 }
 
 .btn:hover {
-  background: white;
-  box-shadow: 0 0 10px #38bdf8;
+    background: white;
+    box-shadow: 0 0 15px var(--secondary);
 }
 
-
 .btn-outline {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
 }
 
 .btn-outline:hover {
-    background: white;
+    background: var(--secondary);
     color: black;
 }
 /* nav bar*/
@@ -127,6 +147,8 @@ a{
     list-style: none;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links li {
@@ -182,7 +204,17 @@ a{
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #1e3a8a;
+    color: #1e3a8a; 
+    position: relative;
+}
+.section h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 /* card */
 .card h3 {
@@ -208,28 +240,18 @@ a{
     line-height: 1.6;
 }
 
-/* Projects */
-.project-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px; /* adds space between cards */
-    margin-top: 20px;
-}
 
-/* Improve cards specifically inside projects */
-.project-container .card {
-    width: 300px;  
-    text-align: left;
-}
 
 /* Skills */
 .skills-container {
     display: flex;
-    justify-content: center;
+    justify-content:center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;   /* ❗ force single line */
+    overflow-x: auto;    /* allow scroll on small screens */
+    padding-bottom: 10px;
 }
+
 
 .skill-box {
     background: white;
@@ -237,19 +259,110 @@ a{
     border-radius: 10px;
     width: 220px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    transition: 0.3s ease;
+    min-width: 220px;
 }
 
 .skill-box:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.2);
+}
+/* Projects */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: nowrap;   /* ❗ force single row */
+    overflow-x: auto;    /* scroll instead of wrapping */
+    padding-bottom: 10px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    min-width:300px;
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.2);
+}
+
+/* Title */
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+/* Description */
+.project-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Tech */
+.tech {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.project-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.project-buttons a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+/* Primary */
+.project-buttons .btn {
+    background: #2563eb;
+    color: white;
+}
+
+.project-buttons .btn:hover {
+    background: #1e40af;
+}
+
+/* Outline */
+.project-buttons .btn-outline {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.project-buttons .btn-outline:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Improve cards specifically inside projects */
+.project-container .card {
+    width: 300px;  
+    text-align: left;
 }
 /* Education */
 
 .edu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: nowrap;   /* ❗ all in one line */
+    overflow-x: auto;    /* scroll if needed */
+    padding-bottom: 10px;
 }
 
 .edu-card {
@@ -258,11 +371,13 @@ a{
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  min-width: 280px;
 }
 
 .edu-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 12px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.2);
 }
 
 .edu-card h3 {
@@ -417,4 +532,116 @@ transition:0.3s;
 footer i:hover{
 transform:scale(1.3);
 color:#60a5fa;
+}
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        overflow-x: auto; /* allows horizontal scroll */
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    /* Hide scrollbar (clean look) */
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+}
+    /* Hero */
+    .hero {
+        min-height: 100vh; /* 👈 FIX instead of height:auto */
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .hero-buttons a {
+        width: auto; /* 👈 remove forced full width */
+        padding: 10px 15px;
+    }
+
+    /* Sections */
+    .section {
+        padding: 40px 15px;
+    }
+
+    /* Skills */
+.skills-container {
+    flex-direction: row;      /* keep horizontal */
+    justify-content:center;
+    overflow-x: auto;
+}
+
+    /* Projects */
+    .project-container {
+        grid-template-columns: 1fr; /* single column */
+    }
+
+    /* Education */
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .contact-box {
+        width: 90%;
+    }
+
+    /* Logo */
+    .logo-img {
+        height: 60px;
+    }
+
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-card,
+    .skill-box,
+    .edu-card {
+        width: 100%;
+    }
 }
