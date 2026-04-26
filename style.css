@@ -518,6 +518,137 @@ font-weight: 500;
 transition: 0.3s ease;
 }
 
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 12px 18px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.15rem;
+    }
+
+    .subtext {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons a {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .about-container,
+    .vision-card,
+    #leadership .card,
+    .contact-box {
+        padding: 20px;
+    }
+
+    .skills-container,
+    .project-container,
+    .edu-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .skill-box,
+    .project-card,
+    .edu-card {
+        width: min(100%, 320px);
+    }
+
+    .project-container {
+        gap: 18px;
+    }
+
+    .project-card {
+        min-width: unset;
+    }
+
+    .edu-grid {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 14px;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .subtext {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        display: block;
+        margin: 8px auto;
+        padding: 12px 0;
+    }
+
+    .section {
+        padding: 40px 16px;
+    }
+
+    .skill-box,
+    .project-card,
+    .edu-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vision-card,
+    #leadership .card,
+    .contact-box {
+        width: 100%;
+    }
+
+    footer {
+        padding: 30px 16px;
+    }
+}
+
 footer a:hover {
 color: #a5b4fc;
 transform: scale(1.1);
