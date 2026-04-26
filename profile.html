@@ -6,83 +6,205 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body id ="top">
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="Copilot_20260426_110602.png" alt="DS Logo" id="logo">
+  </div>
+
 <!-- Main header-->
-    <header>
-    <h1>Dron Shrivastava</h1>
-    <p>Aspiring Software Developer | Python | C++ | Web Development Learner</p>
-    </header>
+<header class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Dron Shrivastava</span></h1>
+        <p class="tagline">
+            Aspiring Software Developer
+        </p>
+        <p class="subtext">
+            Python • C++ • Web Development Enthusiast
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Work</a>
+            <a href="#contact" class="btn-outline">Contact</a>
+        </div>
+    </div>
+</header>
 <!--Selection category-->
-<nav>
+<nav class="navbar">
+<div class="logo">
+  <a href="#top">
+    <img src="Copilot_20260426_110602.png" alt="DS Logo" class="logo-img">
+  </a>
+</div>
 
 
-<a href="#about">About</a>
-
-<a href="#projects">Projects</a>
-
-<a href="#contact">Contact</a>
-
-<a href="#skills">Skills</a>
-
-
-
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#career-vision">Career Vision</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 <!--About-->
-<section id="about">
-
+<section id="about" class="section" data-aos="fade-up">
 <h2>About Me</h2>
 
-<p>
-Hello! I am Dron Shrivastava.
-I am learning programming and development.
-</p>
+<div class="about-container">
+    <p>
+        I'm <strong>Dron Shrivastava</strong>, an aspiring software developer passionate about building real-world projects and improving my problem-solving skills.
+    </p>
+
+    <p>
+        I have hands-on experience with <strong>Python, C++, and Web Development</strong>, and I enjoy creating interactive and user-friendly applications.
+    </p>
+
+    <p>
+        Currently, I am focused on strengthening my development skills, learning new technologies, and building projects that solve practical problems.
+    </p>
+</div>
 
 </section>
+
+
 <!--Projects-->
-<section id="projects">
+<section id="projects" class="section" data-aos="fade-up">
 
 <h2>Projects</h2>
 
-<div class="card">
+<div class="project-container">
+
+<div class="card" data-aos="zoom-in" data-aos-delay="100">
 <h3>Python Lucky Win Contest</h3>
-<p>A small Python game based on random number selection.</p>
+<p>A Python-based number game using random logic and user interaction.</p>
+<p><strong>Tech Used:</strong> Python</p>
 <a href="https://github.com/Dron09Shrivastava/Lucky_Game/tree/main" target="_blank">View Project</a>
 </div>
 
-<div class="card">
-<p>Personal Portfolio Website</p>
+<div class="card" data-aos="zoom-in" data-aos-delay="200">
+<h3>Personal Portfolio Website</h3>
+<p>A responsive website to showcase my skills and projects.</p>
+<p><strong>Tech Used:</strong> HTML, CSS</p>
 </div>
+
+</div>
+
 </section>
 <!--Skills-->
-<section id="skills">
-
+<section id="skills" class="section" data-aos="fade-right">
 <h2>Skills</h2>
 
-<ul>
+<div class="skills-container">
 
-<li>HTML</li>
-<li>CSS</li>
-<li>Git</li>
-<li>GitHub</li>
-<li>C programming Language</li>
-<li>C++</li>
-<li>Python</li>
-<li>MySQL</li>
+<div class="skill-box">
+<h3>Languages</h3>
+<p>Python, C, C++</p>
+</div>
 
-</ul>
+<div class="skill-box">
+<h3>Web Development</h3>
+<p>HTML, CSS</p>
+</div>
+
+<div class="skill-box">
+<h3>Tools</h3>
+<p>Git, GitHub, MySQL</p>
+</div>
+
+</div>
+</section>
+
+<!--Education-->
+<section id="education" class="section" data-aos="fade-up">
+  <h2>Education</h2>
+  <div class="edu-grid">
+
+    <div class="edu-card" data-aos="fade-right">
+      <h3>Class 10</h3>
+      <p><strong>St. Teresa's School, Gwalior</strong></p>
+      <p>Completed: 2022</p>
+      <p>Highlights: Strong foundation in Mathematics & Science</p>
+    </div>
+
+    <div class="edu-card" data-aos="fade-left">
+      <h3>Leadership</h3>
+      <p><strong>Captain of Green House</strong></p>
+      <p>Organized school functions, motivated team, won First Prize</p>
+    </div>
+
+    <div class="edu-card" data-aos="fade-right">
+      <h3>Class 12</h3>
+      <p><strong>PCM Stream with Python & MySQL</strong></p>
+      <p>Completed: 2024</p>
+      <p>Achievements: Consistent academic performance, coding projects</p>
+    </div>
+
+    <div class="edu-card" data-aos="fade-left">
+      <h3>B.Tech (Pursuing)</h3>
+      <p><strong>Amity University, Gwalior</strong></p>
+      <p>2024 – Present</p>
+      <p>Focus: Software Development, Networking, Cybersecurity</p>
+    </div>
+
+  </div>
+</section>
+<!--Career Vision-->
+<section id="career-vision" class="section" data-aos="fade-up">
+  <h2>Career Vision</h2>
+  <div class="vision-card">
+    <h3>My Professional Aspirations</h3>
+    <p><strong>Focus Areas:</strong> Software Development, Cybersecurity, Networking</p>
+    <p><strong>Current Path:</strong> Building projects, strengthening problem-solving, exploring secure application design</p>
+    <p><strong>Goal:</strong> To contribute to creating secure, efficient, and user-friendly IT solutions</p>
+  </div>
+</section>
+
+
+<!--Certificate-->
+<section id="certificates" class="section" data-aos="fade-up">
+
+<h2>Certificates</h2>
+
+<div class="card">
+<p>• Python Programming Course</p>
+<p>• Web Development Basics</p>
+</div>
 
 </section>
+<!--Leadership and Achivements-->
+<section id="leadership" class="section" data-aos="fade-up">
+  <h2>Leadership & Achievements</h2>
+
+  <div class="card">
+    <p><strong>Captain – Green House</strong></p>
+    <p>St. Teresa's School, Gwalior</p>
+    <p>Selected as Captain after Class 10. Took responsibility for organizing school functions and motivating the team.</p>
+    <p>Under my leadership, our house won <strong>First Prize</strong> after many years.</p>
+    <p><em>Skills Gained:</em> Leadership, Event Management, Teamwork, Communication</p>
+  </div>
+</section>
+
 <!--Contact-->
-<section id="contact">
+<section id="contact" class="section" data-aos="fade-left">
 
 <h2>Contact</h2>
 
-<p>Email: dronshrivastava70@gmail.com</p>
-
-<p>GitHub: <a href="https://github.com/Dron09Shrivastava" target="_blank">Visit my GitHub Profile</a></p>
+<div class="contact-box">
+<p><strong>Email:</strong> dronshrivastava70@gmail.com</p>
+<p><strong>GitHub:</strong> 
+<a href="https://github.com/Dron09Shrivastava" target="_blank">github.com/Dron09Shrivastava</a>
+</p>
+<p><strong>LinkedIn:</strong> 
+<a href="https://www.linkedin.com/in/dron-shrivastava-7b0713404/" target="_blank">View Profile</a>
+</p>
+</div>
 
 </section>
+<!--Footer-->
 <footer>
 
 <p>© 2026 Dron Shrivastava | All Rights Reserved</p>
@@ -106,5 +228,19 @@ I am learning programming and development.
 <a href="#">Back to Top ↑</a>
 
 </footer>
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 1200,        // slower animation
+    easing: 'ease-in-out', // smoother motion
+    once: true,            // animate only once
+    offset: 120,           // start animation later (IMPORTANT)
+    delay: 100             // small delay
+});
+</script>
+<script src="script.js"></script>
+
 </body>
 </html>
